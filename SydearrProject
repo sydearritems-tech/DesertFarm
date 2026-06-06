@@ -1,0 +1,26 @@
+local placeId = game.PlaceId
+
+if placeId == 3231515867 then
+    local Sydearr = game.Players.LocalPlayer
+    local function SydearrCheckTeam()
+        if Sydearr.Team and Sydearr.Team.Name == "Türk Silahlı Kuvvetleri" then
+            task.wait(1)
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sydearritems-tech/DesertFarm/refs/heads/main/SYDbestproject"))()
+            task.wait(2)
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sydearritems-tech/DesertFarm/refs/heads/main/SYDproject"))()
+            return true
+        end
+        return false
+    end
+    if not SydearrCheckTeam() then
+        Sydearr:GetPropertyChangedSignal("Team"):Wait()
+        SydearrCheckTeam()
+    end
+elseif placeId == 6912372358 then
+    task.spawn(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sydearritems-tech/DesertFarm/refs/heads/main/SYDproject"))()
+    end)
+    task.spawn(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sydearritems-tech/DesertFarm/refs/heads/main/SYDbestproject"))()
+    end)
+end
